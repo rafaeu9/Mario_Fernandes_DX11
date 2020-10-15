@@ -1,2 +1,5 @@
 C:\Users\Mário\Documents\CGP600\Mario Fernandes  DX11\Debug\Mario Fernandes  DX11.exe
 C:\Users\Mário\Documents\CGP600\Mario Fernandes  DX11\Debug\Mario Fernandes  DX11.pdb
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Debug\Mario Fernandes  DX11.exe
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Debug\Mario Fernandes  DX11.pdb
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Debug\shaders.cso

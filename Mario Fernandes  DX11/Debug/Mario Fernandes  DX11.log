@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\Mário\Documents\CGP600\Mario Fernandes  DX11\main.cpp(99): warning C4715: 'InitialiseWindow': not all control paths return a value
+  Mario Fernandes  DX11.vcxproj -> C:\Users\Mário\Documents\CGP600\Mario Fernandes  DX11\Debug\Mario Fernandes  DX11.exe

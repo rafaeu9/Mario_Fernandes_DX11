@@ -1,0 +1,15 @@
+﻿  game.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(21,36): warning C4316: 'camera': object allocated on the heap may not be aligned 16
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(23,55): warning C4316: 'Model': object allocated on the heap may not be aligned 16
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(40,69): warning C4316: 'ParticleGenerator': object allocated on the heap may not be aligned 16
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(60,89): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(87,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(57,23): warning C4101: 'world': unreferenced local variable
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(123,57): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(124,58): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(125,56): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(126,55): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(127,57): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(128,56): warning C4305: 'argument': truncation from 'double' to 'float'
+  Mario Fernandes _DX11.vcxproj -> C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Debug\Mario Fernandes _DX11.exe

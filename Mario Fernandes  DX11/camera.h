@@ -25,5 +25,10 @@ public:
 	float GetX() { return m_x; };
 	float GetY() { return m_y; };
 	float GetZ() { return m_z; };
+
+	void SetPosition(float x, float y, float z);
+
+	void LookAt_XZ(float x, float y);
+	void LookAt_XYZ(float x, float y, float z);
 };
 

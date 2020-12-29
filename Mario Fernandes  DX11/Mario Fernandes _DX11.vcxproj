@@ -154,6 +154,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="CarPhysics.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="KeyCode.cpp" />
@@ -165,6 +167,7 @@
     <ClCompile Include="skyBox.cpp" />
     <ClCompile Include="text2D.cpp" />
     <ClCompile Include="timer.cpp" />
+    <ClCompile Include="TrackModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="model_shaders.hlsl">
@@ -227,9 +230,21 @@
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
     </FxCompile>
+    <FxCompile Include="track_shader.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Effect</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">4.0</ShaderModel>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="CarPhysics.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Model.h" />
@@ -239,6 +254,7 @@
     <ClInclude Include="skyBox.h" />
     <ClInclude Include="text2D.h" />
     <ClInclude Include="timer.h" />
+    <ClInclude Include="TrackModel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

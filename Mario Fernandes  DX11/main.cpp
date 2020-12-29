@@ -34,8 +34,8 @@ ID3D11BlendState* g_pAlphaBlendDisable;
 ID3D11RasterizerState* rastStateCullNone;
 ID3D11RasterizerState* rastStateCullBack;
 
-Game* g_Game;
-Input* g_pInput;
+Game g_Game;
+Input g_pInput;
 
 
 // Windows Title
@@ -68,8 +68,9 @@ int WINAPI WinMain(_In_ HINSTANCE hInstace, _In_opt_ HINSTANCE hPrevInstance, _I
 		DXTRACE_MSG("Failed to create Windows");
 		return 0;
 	}
+	
 
-	if (FAILED(g_pInput->Initialise(&g_hWnd, &g_hInst)))
+	if (FAILED(g_pInput.Initialise(&g_hWnd, &g_hInst)))
 	{
 		DXTRACE_MSG("Failed to create input");
 		return 0;
@@ -81,9 +82,9 @@ int WINAPI WinMain(_In_ HINSTANCE hInstace, _In_opt_ HINSTANCE hPrevInstance, _I
 		return 0;
 	}
 
-	if (FAILED(g_Game->Initialise(g_pD3DDevice, g_pImmediateContext, g_pInput)))
+	if (FAILED(g_Game.Initialise(g_pD3DDevice, g_pImmediateContext, &g_pInput)))
 	{
-		DXTRACE_MSG("Failed to create graphics");
+		DXTRACE_MSG("Failed to initialize the Game");
 		return 0;
 	}	
 
@@ -347,6 +348,9 @@ HRESULT InitialiseD3D()
 //////////////////////////////////////////////////////////////////////////////
 void ShutdownD3D()
 {
+	
+	g_Game.~Game();
+	g_pInput.~Input();
 
 	if (g_pAlphaBlendEnable) g_pAlphaBlendEnable->Release();
 	if (g_pAlphaBlendDisable) g_pAlphaBlendDisable->Release();
@@ -366,7 +370,7 @@ void ShutdownD3D()
 void RenderFrame(void)
 {	
 	//Select whitch primtive type to use
-	g_pImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+	//g_pImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	
 	// Clear the back buffer - choose a colour you like
 	float rgba_clear_colour[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -374,9 +378,8 @@ void RenderFrame(void)
 	g_pImmediateContext->ClearRenderTargetView(g_pBackBufferRTView, rgba_clear_colour);
 	g_pImmediateContext->ClearDepthStencilView(g_pZBuffer, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 	
-	g_Game->Update();
-	g_Game->Draw();
-
+	g_Game.Update();
+	g_Game.Draw();
 
 	// Display what has just been rendered
 	g_pSwapChain->Present(0, 0);

@@ -18,6 +18,7 @@ public:
 	void SetYPos(float num) { m_y = num; };
 	void SetZPos(float num) { m_z = num; };
 
+
 	void SetXRot(float num) { m_xAngle = num; };
 	void SetYRot(float num) { m_yAngle = num; };
 	void SetZRot(float num) { m_zAngle = num; };

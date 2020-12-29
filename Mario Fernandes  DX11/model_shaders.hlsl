@@ -18,15 +18,18 @@ struct VOut
 };
 
 
-VOut ModelVS(float4 position : POSITION, float2 texcoord : TEXCOORD, float3 normal: NORMAL)
+VOut ModelVS(float4 position : POSITION, float2 texcoord : TEXCOORD, float3 normal : NORMAL)
 {
 	VOut output;
       
     float4 default_color = { 1.0f, 1.0f, 1.0f, 1.0f };
     output.position = mul(WVPMatrix, position);
+    
     float diffusse_amount = dot(directional_light_vector, normal);
     diffusse_amount = saturate(diffusse_amount);
+    
     output.texcoord = texcoord; 
+    
     output.color = ambient_light_colour + (directional_light_colour * diffusse_amount);
     
     return output;

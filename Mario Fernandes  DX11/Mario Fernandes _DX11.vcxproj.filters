@@ -19,6 +19,7 @@
     <FxCompile Include="model_shaders.hlsl">
       <Filter>Shader Files</Filter>
     </FxCompile>
+    <FxCompile Include="track_shader.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="camera.cpp">
@@ -57,6 +58,13 @@
     <ClCompile Include="Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CarPhysics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrackModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="camera.h">
@@ -89,6 +97,13 @@
     <ClInclude Include="Input.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CarPhysics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackModel.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

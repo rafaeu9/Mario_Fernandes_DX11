@@ -4,7 +4,7 @@ HRESULT Input::Initialise(HWND* hWnd, HINSTANCE* hInst)
 {
 	m_hWnd = hWnd;
 	m_hInst = hInst;
-	if (m_hWnd || m_hInst) return E_FAIL;
+	if (m_hWnd == NULL || m_hInst == NULL) return E_FAIL;
 
 	HRESULT hr = S_OK;
 	ZeroMemory(m_keyboard_keys_state, sizeof(m_keyboard_keys_state));
@@ -29,8 +29,7 @@ HRESULT Input::Initialise(HWND* hWnd, HINSTANCE* hInst)
 }
 
 void Input::Update()
-{
-	
+{	
 
 	HRESULT hr;
 	hr = m_keyboard_device->GetDeviceState(sizeof(m_keyboard_keys_state), (LPVOID)&m_keyboard_keys_state);
@@ -41,7 +40,7 @@ void Input::Update()
 			m_keyboard_device->Acquire();
 		}
 	}
-	//if (IsKeyPressed(DIK_ESCAPE)) DestroyWindow(*m_hWnd);
+	if (IsKeyPressed(DIK_ESCAPE)) DestroyWindow(*m_hWnd);
 
 }
 
@@ -52,12 +51,14 @@ bool Input::IsKeyPressed(unsigned char DI_keycode)
 
 Input::~Input()
 {
-	if (m_keyboard_device)
-	{
-		m_keyboard_device->Unacquire();
-		m_keyboard_device->Release();
-	}
-	if (m_direct_input) m_direct_input->Release();
+	//if (m_keyboard_device)
+	//{
+	//	//m_keyboard_device->Unacquire();
+	//	m_keyboard_device->Release();
+	//}
+	//if (m_direct_input) m_direct_input->Release();	
+
+
 }
 
 

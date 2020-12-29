@@ -1,7 +1,7 @@
 #include "reflectiveModel.h"
 
 
-struct MODEL_CONSTANT_BUFFER
+struct REFLECTIVE_MODEL_CONSTANT_BUFFER
 {
 	XMMATRIX WorldViewProjection; //64 bytes (4 x 4 = 16 floats x 4 bytes)
 	XMMATRIX WorldViewMatrix; //64 bytes (4 x 4 = 16 floats x 4 bytes)
@@ -57,7 +57,7 @@ HRESULT reflectiveModel::LoadObjModel(char* filename)
 	ZeroMemory(&constant_buffer_desc, sizeof(constant_buffer_desc));
 
 	constant_buffer_desc.Usage = D3D11_USAGE_DEFAULT;
-	constant_buffer_desc.ByteWidth = sizeof(MODEL_CONSTANT_BUFFER);
+	constant_buffer_desc.ByteWidth = sizeof(REFLECTIVE_MODEL_CONSTANT_BUFFER);
 	constant_buffer_desc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 
 	hr = m_pD3DDevice->CreateBuffer(&constant_buffer_desc, NULL, &m_pConstantBuffer);
@@ -124,14 +124,14 @@ HRESULT reflectiveModel::AddTexture(char* filename)
 void reflectiveModel::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
 	
-	XMMATRIX world, transpose, DirLightRotate;
+	XMMATRIX world;
 	world = XMMatrixScaling(m_scale, m_scale, m_scale);
 	world *= XMMatrixRotationX(XMConvertToRadians(m_xAngle));
 	world *= XMMatrixRotationY(XMConvertToRadians(m_yAngle));
 	world *= XMMatrixRotationZ(XMConvertToRadians(m_zAngle));
 	world *= XMMatrixTranslation(m_x, m_y, m_z);
 	
-	MODEL_CONSTANT_BUFFER model_cb_value;
+	REFLECTIVE_MODEL_CONSTANT_BUFFER model_cb_value;
 	model_cb_value.WorldViewProjection = world * (*view) * (*projection);
 	model_cb_value.WorldViewMatrix = world * (*view);
 

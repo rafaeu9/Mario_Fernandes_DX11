@@ -11,6 +11,7 @@ SamplerState sampler0;
 struct VOut
 {
 	float4 position : SV_POSITION;
+    float4 color : COLOR;
     float3 texcoord : TEXCOORD;
     float3 normal   : NORMAL;
 };
@@ -29,7 +30,7 @@ VOut ModelVS(float4 position : POSITION, float3 texcoord : TEXCOORD, float3 norm
     wvnormal = normalize(wvnormal);
     
     float3 eyer = -normalize(wvpos);
-    
+    output.color = default_color;
     output.texcoord = 2.0 * dot(eyer, wvnormal) * wvnormal - eyer;
     
     return output;

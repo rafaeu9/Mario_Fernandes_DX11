@@ -7,8 +7,10 @@ camera::camera(float x, float y, float z, float rotation)
 	m_z = z;
 	m_camera_rotation = rotation;
 
+	m_lookat = XMVectorSet( 0,0,0,0 );
+
 	m_dx = sin(m_camera_rotation * (XM_PI / 180.0));
-	m_dz = cos(m_camera_rotation * (XM_PI / 180.0));
+	m_dz = cos(m_camera_rotation * (XM_PI / 180.0));	
 }
 
 void camera::Rotate(float roationDegrees)
@@ -45,8 +47,25 @@ void camera::Starf(float distance)
 XMMATRIX camera::GetViewMatrix()
 {
 	m_position = XMVectorSet(m_x, m_y, m_z, 0.0);
-	m_lookat = XMVectorSet(m_x + m_dx, m_y, m_z + m_dz, 0.0);
+	//m_lookat = XMVectorSet(m_x + m_dx, m_y, m_z + m_dz, 0.0);
 	m_up = XMVectorSet(0.0, 1.0, 0.0, 0.0);
 
 	return XMMatrixLookAtLH(m_position, m_lookat, m_up);
+}
+
+void camera::SetPosition(float x, float y, float z)
+{
+	m_x = x;
+	m_y = y;
+	m_z = z;
+}
+
+void camera::LookAt_XZ(float x, float z)
+{
+	m_lookat = XMVectorSet(x, m_y, z, 0.0);
+}
+
+void camera::LookAt_XYZ(float x, float y, float z)
+{
+	m_lookat = XMVectorSet(x, y, z, 0.0);
 }

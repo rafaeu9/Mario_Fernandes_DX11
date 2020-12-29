@@ -10,11 +10,11 @@ public:
 	void Reset();
 	void Update();
 
-	float GetTimeDelta() { return m_TimeDelta; }
+	float GetDeltaTime() { return m_DeltaTime; }
 	double GetTime() { return m_Time; }
 
 private:
-	float           m_TimeDelta;
+	float           m_DeltaTime;
 	double          m_Time;
 	unsigned long   m_Ticks;
 };

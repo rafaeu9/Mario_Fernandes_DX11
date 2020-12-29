@@ -24,6 +24,9 @@
     <ContentFile>
       <FullPath>C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Debug\text2D_shaders.cso</FullPath>
     </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Debug\track_shader.cso</FullPath>
+    </ContentFile>
   </ContentFiles>
   <SatelliteDlls />
   <NonRecipeFileRefs />

@@ -13,7 +13,7 @@ Model::Model(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext)
 {
 	m_pD3DDevice = D3DDevice;
 	m_pImmediateContext = ImmediateContext;
-	m_x = m_y = m_z = 0.0f;
+	m_x = m_y = m_z = 1.0f;
 	m_xAngle = m_yAngle = m_zAngle = 0.0f;
 	m_scale = 1.0f;
 }
@@ -28,8 +28,14 @@ Model::~Model()
 
 	if (m_pVShader) m_pVShader->Release();
 	if (m_pPShader) m_pPShader->Release();
+	if (m_pInputLayout) m_pInputLayout->Release();
+	if (m_pConstantBuffer) m_pConstantBuffer->Release();	
 	if (m_pTexture) m_pTexture->Release();
 	if (m_pSampler) m_pSampler->Release();
+	if (m_pAlphaBlendEnable) m_pAlphaBlendEnable->Release();
+	if (m_pAlphaBlendDisable) m_pAlphaBlendDisable->Release();
+	if (rastStateCullNone) rastStateCullNone->Release();
+	if (rastStateCullBack) rastStateCullBack->Release();
 }
 
 HRESULT Model::LoadObjModel(char* filename)
@@ -56,7 +62,7 @@ HRESULT Model::LoadObjModel(char* filename)
 	ZeroMemory(&constant_buffer_desc, sizeof(constant_buffer_desc));
 
 	constant_buffer_desc.Usage = D3D11_USAGE_DEFAULT;
-	constant_buffer_desc.ByteWidth = 112;
+	constant_buffer_desc.ByteWidth = sizeof(MODEL_CONSTANT_BUFFER);
 	constant_buffer_desc.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 
 	hr = m_pD3DDevice->CreateBuffer(&constant_buffer_desc, NULL, &m_pConstantBuffer);
@@ -122,8 +128,8 @@ HRESULT Model::AddTexture(char* filename)
 
 void Model::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
-	m_directional_light_shines_from = XMVectorSet(-5.0f, -5.0f, 5.0f, 0.0f);
-	m_directional_light_colour = XMVectorSet(0.0f, 1.0f, 0.0f, 0.0f);//green
+	m_directional_light_shines_from = XMVectorSet(5.0f, 5.0f, 5.0f, 0.0f);
+	m_directional_light_colour = XMVectorSet(1.0f, 1.0f, 1.0f, 0.0f);//green
 	m_ambient_light_colour = XMVectorSet(0.1f, 0.1f, 0.1f, 1.0f);//dark grey - always use a small value for ambient lighting
 	
 	XMMATRIX world, transpose, DirLightRotate;
@@ -216,6 +222,7 @@ void Model::CalculateBoundingSphereRadius()
 	}		 
 
 	m_bounding_sphere_radius = sqrt(distance);
+
 }
 
 XMVECTOR Model::GetBoundingSphereWorldSpacePosition()

@@ -18,9 +18,19 @@ public:
 	void SetYPos(float num) { m_y = num; };
 	void SetZPos(float num) { m_z = num; };
 
+	void SetPos(XMVECTOR Pos) { m_x = XMVectorGetX(Pos);
+								m_y = XMVectorGetY(Pos);
+								m_z = XMVectorGetZ(Pos);}
+
 	void SetXRot(float num) { m_xAngle = num; };
 	void SetYRot(float num) { m_yAngle = num; };
 	void SetZRot(float num) { m_zAngle = num; };
+
+
+	void SetRot(XMVECTOR Rot) {	m_xAngle = XMVectorGetX(Rot);
+								m_yAngle = XMVectorGetY(Rot);
+								m_zAngle = XMVectorGetZ(Rot);}
+								
 
 	void SetScale(float num) { m_scale = num; };
 
@@ -41,7 +51,7 @@ public:
 	void ModXRot(float num) { m_xAngle += num; };
 	void ModYRot(float num) { m_yAngle += num; };
 	void ModZRot(float num) { m_zAngle += num; };
-	
+
 	void ModScale(float num) { m_scale += num; };
 
 	void LookAt_XZ(float x, float y);
@@ -51,12 +61,22 @@ public:
 	float GetBoundingSphereRadius() { return m_bounding_sphere_radius * m_scale; };
 
 	bool CheckCollision(Model* model);
-
+	ObjFileModel* m_pObject;
 private:
+
+	float			m_x, m_y, m_z;
+	float			m_xAngle, m_yAngle, m_zAngle;
+	float			m_scale = 1;
+
+	float			m_bounding_sphere_centre_x = 0,
+		m_bounding_sphere_centre_y = 0,
+		m_bounding_sphere_centre_z = 0,
+		m_bounding_sphere_radius = 0;
+
 	ID3D11Device* m_pD3DDevice;
 	ID3D11DeviceContext* m_pImmediateContext;
 
-	ObjFileModel* m_pObject;
+	
 	ID3D11VertexShader* m_pVShader;
 	ID3D11PixelShader* m_pPShader;
 	ID3D11InputLayout* m_pInputLayout;
@@ -69,23 +89,13 @@ private:
 
 	ID3D11RasterizerState* rastStateCullNone;
 	ID3D11RasterizerState* rastStateCullBack;
+	
 
 	XMVECTOR m_directional_light_shines_from;
 	XMVECTOR m_directional_light_colour;
 	XMVECTOR m_ambient_light_colour;
 
-
-	float			m_x, m_y, m_z;
-	float			m_xAngle, m_yAngle, m_zAngle;
-	float			m_scale = 1;
-	
-	float			m_bounding_sphere_centre_x = 0, 
-					m_bounding_sphere_centre_y = 0, 
-					m_bounding_sphere_centre_z = 0, 
-					m_bounding_sphere_radius = 0;
-
-	
-	void CalculateModelCentrePoint();		
+	void CalculateModelCentrePoint();
 	void CalculateBoundingSphereRadius();
 };
 

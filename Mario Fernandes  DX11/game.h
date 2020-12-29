@@ -21,6 +21,8 @@ using namespace DirectX;
 #include "reflectiveModel.h"
 #include "ParticleGenerator.h"
 #include "Input.h"
+#include "Car.h"
+#include "TrackModel.h"
 
 class Game
 {
@@ -38,14 +40,19 @@ public:
 	ID3D11Device*			m_pD3DDevice;
 	ID3D11DeviceContext*	m_pImmediateContext;
 	Input*					m_input;
+	int FPS = 0, deltaFPS = 0;
+	float frametime = 0;
 
+	Car* car1;
 	camera* camera1;
 	Text2D* g_2Dtext;
 	Model* model0;
+	Model* model2;
+	TrackModel* m_track;
 	reflectiveModel* model1;
 	skyBox* SkyBox;
 	ParticleGenerator* particle;
-
+	
 	
 	void ReadInputStates();
 };

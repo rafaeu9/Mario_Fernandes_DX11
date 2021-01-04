@@ -1,14 +1,15 @@
 #pragma once
+#include "CarPhysics.h"
 #include "camera.h"
 #include "TrackModel.h"
-#include "CarPhysics.h"
 #include "Input.h"
+#include "ParticleGenerator.h"
 
 class Car
 {
 public:
 
-	Car(camera* camera, Model* model, Timer* time, Input* input, TrackModel* Track);
+	Car(camera* camera, Model* model, Timer* time, Input* input, ParticleGenerator* particle, ParticleGenerator* Bparticle);
 	~Car();
 
 	void Update();
@@ -22,6 +23,8 @@ private:
 	bool m_LookCar = true;
 	float m_OffSetY = 3;
 	float frametime = 0;
+	float extraSpeed = 0.5;
+	bool boosting = false;
 
 	Input* m_input;
 
@@ -30,6 +33,8 @@ private:
 	
 	Timer* m_time;
 
-	TrackModel* m_Track;
+
+	ParticleGenerator* m_particle;
+	ParticleGenerator* m_Bparticle;
 };
 

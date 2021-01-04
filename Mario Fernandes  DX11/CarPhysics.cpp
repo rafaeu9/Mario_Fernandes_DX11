@@ -13,14 +13,13 @@ CarPhysics::~CarPhysics()
 
 void CarPhysics::Update()
 {
-	m_CurrentVelocity += m_time->GetDeltaTime() * m_acceleration;
+	m_CurrentVelocity +=  m_acceleration * m_time->GetDeltaTime();
 
-	m_position += m_time->GetDeltaTime() * m_CurrentVelocity;
+	m_position += m_CurrentVelocity  * m_time->GetDeltaTime();
 
-	if(XMVectorGetX(m_acceleration) + XMVectorGetY(m_acceleration) + XMVectorGetZ(m_acceleration) == 0)
-		m_CurrentVelocity -= (m_CurrentVelocity * m_externalForce) * m_time->GetDeltaTime();
-
-	if(XMVectorGetX(m_acceleration) + XMVectorGetY(m_acceleration) + XMVectorGetZ(m_acceleration) != 0)
+	if(m_acceleration.x + m_acceleration.y + m_acceleration.z == 0)
+		m_CurrentVelocity -= m_externalForce * m_CurrentVelocity * m_time->GetDeltaTime();
+	else
 		m_acceleration *= 0;
 
 }
@@ -28,6 +27,11 @@ void CarPhysics::Update()
 void CarPhysics::Accelerate()
 {
 	m_acceleration = m_direction * m_accelerationforce;
+}
+
+void CarPhysics::Boost(float extraSpeed)
+{
+	m_CurrentVelocity += m_CurrentVelocity * extraSpeed * m_time->GetDeltaTime();
 }
 
 void CarPhysics::Brake()
@@ -39,11 +43,11 @@ void CarPhysics::Rotate(float roationDegrees)
 {
 	m_rotation += roationDegrees * m_time->GetDeltaTime();
 
-	float m_dx = sin(m_rotation * (XM_PI / 180.0)) + XMVectorGetX(m_direction);
-	float m_dz = cos(m_rotation * (XM_PI / 180.0)) + XMVectorGetZ(m_direction);
+	float m_dx = sin(m_rotation * (M_PI / 180.0)) + m_direction.x;
+	float m_dz = cos(m_rotation * (M_PI / 180.0)) + m_direction.z;
 
-	m_direction = XMVectorSet(m_dx, 0, m_dz,0);
-	m_direction = XMVector3Normalize(m_direction);
+	m_direction = { m_dx, 0, m_dz };
+	m_direction = normalise(m_direction);
 }
 
 

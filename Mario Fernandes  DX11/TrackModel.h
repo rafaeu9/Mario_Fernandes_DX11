@@ -3,11 +3,14 @@
 #include "objfilemodel.h"
 #include "text2D.h"
 #include "Model.h"
+#include "Car.h"
+
+class Car;
 
 class TrackModel
 {
 public:
-	TrackModel(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext);
+	TrackModel(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext, Car* Player);
 	~TrackModel();
 
 	HRESULT LoadObjModel(char* filename);
@@ -73,6 +76,8 @@ private:
 		m_bounding_sphere_centre_y = 0,
 		m_bounding_sphere_centre_z = 0,
 		m_bounding_sphere_radius = 0;
+
+	Car* m_Player;
 
 	ID3D11Device* m_pD3DDevice;
 	ID3D11DeviceContext* m_pImmediateContext;

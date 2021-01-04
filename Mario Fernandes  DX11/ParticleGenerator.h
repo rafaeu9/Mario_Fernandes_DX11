@@ -4,6 +4,8 @@
 #pragma comment(lib, "winmm.lib")
 #include "text2D.h"
 
+#include "MathMario.h"
+
 struct Particle
 {
 	float gravity;
@@ -16,6 +18,8 @@ struct Particle
 enum ParticleType
 {
 	RAINBOW_FOUNTAIN,
+	JETT,
+	BARRIER,
 };
 
 class ParticleGenerator
@@ -24,7 +28,7 @@ public:
 	ParticleGenerator(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext);
 	~ParticleGenerator();
 
-	HRESULT CreateParticle();
+	HRESULT CreateParticle(ParticleType inp_type);
 	HRESULT AddTexture(char* filename);
 
 	void Draw(XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 cameraposition);
@@ -37,6 +41,12 @@ public:
 	void SetXRot(float num) { m_xAngle = num; };
 	void SetYRot(float num) { m_yAngle = num; };
 	void SetZRot(float num) { m_zAngle = num; };
+
+	void SetPos(Vector3 Pos) {
+		m_x = Pos.x;
+		m_y = Pos.y;
+		m_z = Pos.z;
+	}
 
 	void SetScale(float num) { m_scale = num; };
 
@@ -69,6 +79,29 @@ public:
 	bool CheckCollision(ParticleGenerator* model);
 
 private:
+
+	bool			m_isActive = true;
+
+	float			m_x, m_y, m_z;
+	float			m_xAngle, m_yAngle, m_zAngle;
+	float			m_scale = 1;
+
+	float			m_bounding_sphere_centre_x = 0,
+		m_bounding_sphere_centre_y = 0,
+		m_bounding_sphere_centre_z = 0,
+		m_bounding_sphere_radius = 0;
+	int	count;
+	float m_timePrevious;
+	float m_untilParticle;
+	float RandomZeroToOne();
+	float RandomNegOneToPosOne();
+
+	std::list<Particle*> m_free;
+	std::list<Particle*> m_active;
+	std::list<Particle*>::iterator it;//iteration list for pointing to the correct particle in the list
+	ParticleType	type = RAINBOW_FOUNTAIN;
+	float			m_age = 0;
+
 	ID3D11Device* m_pD3DDevice;
 	ID3D11DeviceContext* m_pImmediateContext;
 
@@ -90,28 +123,10 @@ private:
 	XMVECTOR m_directional_light_colour;
 	XMVECTOR m_ambient_light_colour;
 
-	bool			m_isActive = true;
-	
-	float			m_x, m_y, m_z;
-	float			m_xAngle, m_yAngle, m_zAngle;
-	float			m_scale = 1;
-	
-	float			m_bounding_sphere_centre_x = 0, 
-					m_bounding_sphere_centre_y = 0, 
-					m_bounding_sphere_centre_z = 0, 
-					m_bounding_sphere_radius = 0;
-	int	count;
-	float m_timePrevious;
-	float m_untilParticle;
-	float RandomZeroToOne();
-	float RandomNegOneToPosOne();
 
 
-	std::list<Particle*> m_free;
-	std::list<Particle*> m_active;
-	std::list<Particle*>::iterator it;//iteration list for pointing to the correct particle in the list
-	ParticleType	type = RAINBOW_FOUNTAIN;
-	float			m_age = 0;
+
+
 
 	
 	void CalculateModelCentrePoint();		

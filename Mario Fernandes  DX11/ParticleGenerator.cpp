@@ -16,7 +16,7 @@ ParticleGenerator::ParticleGenerator(ID3D11Device* D3DDevice, ID3D11DeviceContex
 	m_pImmediateContext = ImmediateContext;
 	m_x = m_y = m_z = 0.0f;
 	m_xAngle = m_yAngle = m_zAngle = 0.0f;
-	m_scale = 0.3f;
+	m_scale = 1;
 	count = 100;
 
 	for (int i = 0; i < count; i++)
@@ -51,8 +51,9 @@ ParticleGenerator::~ParticleGenerator()
 	if (m_pSampler) m_pSampler->Release();
 }
 
-HRESULT ParticleGenerator::CreateParticle()
+HRESULT ParticleGenerator::CreateParticle(ParticleType inp_type)
 {	
+	type = inp_type;
 	HRESULT hr = S_OK;
 	
 	XMFLOAT3 vertices[6] =//verts for the quad NOTE: could be changed to make different shapes??
@@ -162,6 +163,30 @@ void ParticleGenerator::Draw(XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 came
 					////////////////////////////////////////////////////////////////////////////////////////////////
 					break;
 				}
+				case JETT:
+				{
+					m_age = 0.1f;
+					m_untilParticle = 0.008f;
+					////////////////////////initialise the particle NOTE: all of this is adjustable for different effects////////////////////////
+					(*it)->color = XMFLOAT4(RandomZeroToOne(), 0.5f, 0, 1);
+					(*it)->gravity = 0.f;
+					(*it)->position = XMFLOAT3(m_x, m_y, m_z);
+					(*it)->velocity = XMFLOAT3(RandomNegOneToPosOne(), 4.50f, RandomNegOneToPosOne());
+					////////////////////////////////////////////////////////////////////////////////////////////////
+					break;
+				}
+				case BARRIER:
+				{
+					m_age = 3.0f;
+					m_untilParticle = 0.008f;
+					////////////////////////initialise the particle NOTE: all of this is adjustable for different effects////////////////////////
+					(*it)->color = XMFLOAT4(0.f, RandomZeroToOne(), RandomZeroToOne(), 1);
+					(*it)->gravity = 0.f;
+					(*it)->position = XMFLOAT3(m_x, m_y, m_z);
+					(*it)->velocity = XMFLOAT3(RandomNegOneToPosOne(), 4.50f, RandomNegOneToPosOne());
+					////////////////////////////////////////////////////////////////////////////////////////////////
+					break;
+				}
 				default:
 				{
 					break;
@@ -196,6 +221,22 @@ void ParticleGenerator::Draw(XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 came
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				break;
 			}
+			case JETT:
+			{
+				/////////////////////////ALL of this is adjustable for different effects///////////////////////////////////////////////////////////
+				(*it)->age += deltaTime;
+
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				break;
+			}
+			case BARRIER:
+			{
+				/////////////////////////ALL of this is adjustable for different effects///////////////////////////////////////////////////////////
+				(*it)->age += deltaTime;
+
+				///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+				break;
+			}
 			default:
 			{
 				break;
@@ -209,6 +250,20 @@ void ParticleGenerator::Draw(XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 came
 					/*set scale and world transforms here*/
 					world = XMMatrixScaling(m_scale, m_scale, m_scale);
 					world *= XMMatrixTranslation(m_x, m_y, m_z);
+					break;
+				}
+				case JETT:
+				{
+					/*set scale and world transforms here*/
+					world = XMMatrixScaling(m_scale, m_scale, m_scale);
+					world = XMMatrixTranslation(0, 0, 0);
+					break;
+				}
+				case BARRIER:
+				{
+					/*set scale and world transforms here*/
+					world = XMMatrixScaling(m_scale, m_scale, m_scale);
+					world = XMMatrixTranslation(0, 0, 0);
 					break;
 				}
 				default:
@@ -258,7 +313,7 @@ void ParticleGenerator::Draw(XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 came
 	Particle test;
 	test.color = XMFLOAT4(1.f, 0.f, 0.3f, 1.f);
 	test.gravity = 1;
-	test.position = XMFLOAT3(0.f, 3.f, 14);
+	test.position = XMFLOAT3(0.f, 0, 0);
 	test.velocity = XMFLOAT3(0.f, 0.f, 0.f);
 	
 	DrawOne(&test, view, projection, cameraposition);

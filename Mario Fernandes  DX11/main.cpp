@@ -373,13 +373,18 @@ void RenderFrame(void)
 	//g_pImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	
 	// Clear the back buffer - choose a colour you like
-	float rgba_clear_colour[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
+	float rgba_clear_colour[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 	
 	g_pImmediateContext->ClearRenderTargetView(g_pBackBufferRTView, rgba_clear_colour);
 	g_pImmediateContext->ClearDepthStencilView(g_pZBuffer, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 	
-	g_Game.Update();
-	g_Game.Draw();
+	if (!g_Game.Finished)
+	{
+		g_Game.Update();
+		g_Game.Draw();
+	}
+	else
+		g_Game.Finish();
 
 	// Display what has just been rendered
 	g_pSwapChain->Present(0, 0);

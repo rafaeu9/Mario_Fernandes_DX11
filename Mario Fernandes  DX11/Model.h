@@ -2,6 +2,7 @@
 #include<d3d11.h>
 #include "objfilemodel.h"
 #include "text2D.h"
+#include "MathMario.h"
 
 class Model
 {
@@ -18,18 +19,18 @@ public:
 	void SetYPos(float num) { m_y = num; };
 	void SetZPos(float num) { m_z = num; };
 
-	void SetPos(XMVECTOR Pos) { m_x = XMVectorGetX(Pos);
-								m_y = XMVectorGetY(Pos);
-								m_z = XMVectorGetZ(Pos);}
+	void SetPos(Vector3 Pos) { m_x = Pos.x;
+								m_y = Pos.y;
+								m_z = Pos.z;}
 
 	void SetXRot(float num) { m_xAngle = num; };
 	void SetYRot(float num) { m_yAngle = num; };
 	void SetZRot(float num) { m_zAngle = num; };
 
 
-	void SetRot(XMVECTOR Rot) {	m_xAngle = XMVectorGetX(Rot);
-								m_yAngle = XMVectorGetY(Rot);
-								m_zAngle = XMVectorGetZ(Rot);}
+	void SetRot(Vector3 Rot) {	m_xAngle = Rot.x;
+								m_yAngle = Rot.y;
+								m_zAngle = Rot.z;}
 								
 
 	void SetScale(float num) { m_scale = num; };
@@ -61,17 +62,22 @@ public:
 	float GetBoundingSphereRadius() { return m_bounding_sphere_radius * m_scale; };
 
 	bool CheckCollision(Model* model);
+	bool CheckCollisionXY(Model* model);
+	
 	ObjFileModel* m_pObject;
+
+	float			m_bounding_sphere_centre_x = 0,
+		m_bounding_sphere_centre_y = 0,
+		m_bounding_sphere_centre_z = 0,
+		m_bounding_sphere_radius = 0;
+
 private:
 
 	float			m_x, m_y, m_z;
 	float			m_xAngle, m_yAngle, m_zAngle;
 	float			m_scale = 1;
 
-	float			m_bounding_sphere_centre_x = 0,
-		m_bounding_sphere_centre_y = 0,
-		m_bounding_sphere_centre_z = 0,
-		m_bounding_sphere_radius = 0;
+
 
 	ID3D11Device* m_pD3DDevice;
 	ID3D11DeviceContext* m_pImmediateContext;

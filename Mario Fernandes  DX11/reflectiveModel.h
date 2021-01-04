@@ -2,6 +2,7 @@
 #include<d3d11.h>
 #include "objfilemodel.h"
 #include "text2D.h"
+#include "Model.h"
 
 class reflectiveModel
 {
@@ -51,7 +52,7 @@ public:
 	XMVECTOR GetBoundingSphereWorldSpacePosition();
 	float GetBoundingSphereRadius() { return m_bounding_sphere_radius * m_scale; };
 
-	bool CheckCollision(reflectiveModel* model);
+	bool CheckCollision(Model* model);
 
 private:
 	ID3D11Device* m_pD3DDevice;

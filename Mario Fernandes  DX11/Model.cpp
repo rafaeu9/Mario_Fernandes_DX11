@@ -13,7 +13,7 @@ Model::Model(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext)
 {
 	m_pD3DDevice = D3DDevice;
 	m_pImmediateContext = ImmediateContext;
-	m_x = m_y = m_z = 1.0f;
+	m_x = m_y = m_z = 0.0f;
 	m_xAngle = m_yAngle = m_zAngle = 0.0f;
 	m_scale = 1.0f;
 }
@@ -130,7 +130,7 @@ void Model::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
 	m_directional_light_shines_from = XMVectorSet(5.0f, 5.0f, 5.0f, 0.0f);
 	m_directional_light_colour = XMVectorSet(1.0f, 1.0f, 1.0f, 0.0f);//green
-	m_ambient_light_colour = XMVectorSet(0.1f, 0.1f, 0.1f, 1.0f);//dark grey - always use a small value for ambient lighting
+	m_ambient_light_colour = XMVectorSet(0.5f, 0.5f, 0.5f, 1.0f);//dark grey - always use a small value for ambient lighting
 	
 	XMMATRIX world, transpose, DirLightRotate;
 	world = XMMatrixScaling(m_scale, m_scale, m_scale);
@@ -143,13 +143,17 @@ void Model::Draw(XMMATRIX* view, XMMATRIX* projection)
 	model_cb_value.WorldViewProjection = world * (*view) * (*projection);
 
 	transpose = XMMatrixTranspose(world);
+	
+	
 
 	model_cb_value.directional_light_colour = m_directional_light_colour;
 	model_cb_value.ambient_light_colour = m_ambient_light_colour;
 	model_cb_value.directional_light_vector = XMVector3Transform(m_directional_light_shines_from, transpose);
 	model_cb_value.directional_light_vector = XMVector3Normalize(model_cb_value.directional_light_vector);
-	model_cb_value.directional_light_vector = XMVector3Transform(XMVector3Transform(m_directional_light_shines_from, DirLightRotate), transpose);
-
+	//model_cb_value.directional_light_vector = XMVector3Transform(XMVector3Transform(m_directional_light_shines_from, DirLightRotate), transpose);
+	
+	
+	
 	m_pImmediateContext->VSSetConstantBuffers(0, 1, &m_pConstantBuffer);
 	m_pImmediateContext->UpdateSubresource(m_pConstantBuffer, 0, 0, &model_cb_value, 0, 0);
 
@@ -221,7 +225,7 @@ void Model::CalculateBoundingSphereRadius()
 			distance = (pow(m_bounding_sphere_centre_x - m_pObject->vertices[i].Pos.x, 2) + pow(m_bounding_sphere_centre_y - m_pObject->vertices[i].Pos.y, 2) + pow(m_bounding_sphere_centre_z - m_pObject->vertices[i].Pos.z, 2));
 	}		 
 
-	m_bounding_sphere_radius = sqrt(distance);
+	m_bounding_sphere_radius = sqrtf(distance);
 
 }
 
@@ -255,6 +259,27 @@ bool Model::CheckCollision(Model* model)
 
 	float distance = GetBoundingSphereRadius() + model->GetBoundingSphereRadius();
 	if (distance > sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2) + pow(z1 - z2, 2)))
+		return true;
+	else
+		return false;
+}
+
+bool Model::CheckCollisionXY(Model* model)
+{
+	if (model == this) return false;
+
+
+	float x1 = XMVectorGetX(GetBoundingSphereWorldSpacePosition());
+	float y1 = XMVectorGetY(GetBoundingSphereWorldSpacePosition());
+	float z1 = XMVectorGetZ(GetBoundingSphereWorldSpacePosition());
+
+	float x2 = XMVectorGetX(model->GetBoundingSphereWorldSpacePosition());
+	float y2 = XMVectorGetY(model->GetBoundingSphereWorldSpacePosition());
+	float z2 = XMVectorGetZ(model->GetBoundingSphereWorldSpacePosition());
+	
+
+	float distance = GetBoundingSphereRadius() /*+ model->GetBoundingSphereRadius()*/;
+	if (distance > sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2) + pow(z1 - z2, 2)) && distance > sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)))
 		return true;
 	else
 		return false;

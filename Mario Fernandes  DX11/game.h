@@ -31,7 +31,8 @@ public:
 	HRESULT Initialise(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext, Input* Input);
 	void Update();
 	void Draw();
-
+	void Finish();
+	bool Finished = false;
 
 	~Game();
 
@@ -42,18 +43,29 @@ public:
 	Input*					m_input;
 	int FPS = 0, deltaFPS = 0;
 	float frametime = 0;
+	float youtime = 0;
 
 	Car* car1;
 	camera* camera1;
 	Text2D* g_2Dtext;
 	Model* model0;
 	Model* model2;
+	Model* model3;
+	bool check = false;
+	Model* Check1;
+	Model* Check2;
 	TrackModel* m_track;
 	reflectiveModel* model1;
 	skyBox* SkyBox;
 	ParticleGenerator* particle;
-	
+	ParticleGenerator* carParticle;
+	ParticleGenerator* boostParticle;
+
+	reflectiveModel* Boost1;
+	reflectiveModel* Boost2;
+	reflectiveModel* Boost3;
 	
 	void ReadInputStates();
+	
 };
 

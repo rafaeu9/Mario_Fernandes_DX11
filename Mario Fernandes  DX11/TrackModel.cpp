@@ -1,6 +1,7 @@
 #include "TrackModel.h"
 
 
+
 struct MODEL_CONSTANT_BUFFER
 {
 	XMMATRIX WorldViewProjection; //64 bytes (4 x 4 = 16 floats x 4 bytes)
@@ -9,11 +10,12 @@ struct MODEL_CONSTANT_BUFFER
 	XMVECTOR ambient_light_colour;			//16 bytes
 };// TOTAL SIZE = 64 bytes
 
-TrackModel::TrackModel(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext)
+TrackModel::TrackModel(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext, Car* Player)
 {
+	m_Player = Player;
 	m_pD3DDevice = D3DDevice;
 	m_pImmediateContext = ImmediateContext;
-	m_x = m_y = m_z = 1.0f;
+	m_x = m_y = m_z = 0.0f;
 	m_xAngle = m_yAngle = m_zAngle = 0.0f;
 	m_scale = 1.0f;
 }
@@ -128,7 +130,7 @@ HRESULT TrackModel::AddTexture(char* filename)
 
 void TrackModel::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
-	m_directional_light_shines_from = XMVectorSet(0.0f, 5.0f, 0.0f, 0.0f);
+	m_directional_light_shines_from = XMVectorSet(m_Player->m_Physics->GetPosition().x, m_Player->m_Physics->GetPosition().y, m_Player->m_Physics->GetPosition().z, 0.0f);
 	m_directional_light_colour = XMVectorSet(1.0f, 1.0f, 1.0f, 0.0f);//white
 	m_ambient_light_colour = XMVectorSet(0.1f, 0.1f, 0.1f, 1.0f);//dark grey - always use a small value for ambient lighting
 	
@@ -139,6 +141,10 @@ void TrackModel::Draw(XMMATRIX* view, XMMATRIX* projection)
 	world *= XMMatrixRotationZ(XMConvertToRadians(m_zAngle));
 	world *= XMMatrixTranslation(m_x, m_y, m_z);
 	
+	//DirLightRotate = XMMatrixRotationX(XMConvertToRadians(m_Player->m_Physics->GetRot()));
+	DirLightRotate = XMMatrixRotationY(XMConvertToRadians(m_Player->m_Physics->GetRot()));
+	//DirLightRotate = XMMatrixRotationZ(XMConvertToRadians(m_Player->m_Physics->GetRot()));
+
 	MODEL_CONSTANT_BUFFER model_cb_value;
 	model_cb_value.WorldViewProjection = world * (*view) * (*projection);
 

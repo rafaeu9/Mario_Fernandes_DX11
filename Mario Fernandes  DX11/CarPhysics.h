@@ -1,11 +1,6 @@
 #pragma once
 
-#include<DirectXMath.h>
-#define _XM_NO_INTINSICS_
-#define XM_NO_ALIGNMENT
-
-using namespace DirectX;
-
+#include "MathMario.h"
 #include "timer.h"
 
 
@@ -19,29 +14,28 @@ public:
 	void Update();
 
 	void Accelerate();
+	void Boost(float extraSpeed);
 	void Brake();
 	void Rotate(float roationDegrees);
 
-	XMVECTOR GetPosition() { return m_position; };
-	XMVECTOR GetDirection() { return m_direction; };
-	XMVECTOR GetCurrentVelocity() { return m_CurrentVelocity; };
+	Vector3 GetPosition() { return m_position; };
+	Vector3 GetDirection() { return m_direction; };
+	Vector3 GetCurrentVelocity() { return m_CurrentVelocity; };
 
 	float GetRot() { return m_rotation; };
+	void SetPos(Vector3 Pos) { m_position = Pos; };
 
-	XMVECTOR GetPos() { return m_position; };
-	void SetPos(XMVECTOR Pos) { m_position = Pos; };
-
-	void StopCar() { m_CurrentVelocity = XMVectorZero(); };
+	void StopCar() { m_CurrentVelocity = { 0, 0, 0 }; };
 
 private:
 
-	XMVECTOR m_direction = XMVectorSet( 0, 0, 1, 0 );
-	XMVECTOR m_position = XMVectorSet(0, 0, 0, 0 );
-	XMVECTOR m_acceleration = XMVectorSet(0, 0, 0, 0 );
-	XMVECTOR m_CurrentVelocity = XMVectorSet(0, 0, 0, 0);
-	XMVECTOR m_externalForce = XMVectorSet(0.9f,0,0.9f,0);
+	Vector3 m_direction = { 0, 0, 1 };
+	Vector3 m_position = { 0, 0, 0 };
+	Vector3 m_acceleration = { 0, 0, 0 };
+	Vector3 m_CurrentVelocity = { 0, 0, 0 };
+	Vector3 m_externalForce = { 0.9f,0,0.9f };
 
-	float m_accelerationforce = 0, m_brakingForce = 0, m_rotation = 0;
+	float m_accelerationforce = 0, m_brakingForce = 0, m_rotation = -90;
 	
 
 	Timer* m_time;

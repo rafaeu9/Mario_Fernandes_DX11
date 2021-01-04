@@ -225,9 +225,9 @@ XMVECTOR reflectiveModel::GetBoundingSphereWorldSpacePosition()
 	return offset;
 }
 
-bool reflectiveModel::CheckCollision(reflectiveModel* model)
+bool reflectiveModel::CheckCollision(Model* model)
 {
-	if (model == this) return false;
+	//if (model == this) return false;
 
 	float x1 = XMVectorGetX(GetBoundingSphereWorldSpacePosition());
 	float y1 = XMVectorGetY(GetBoundingSphereWorldSpacePosition());

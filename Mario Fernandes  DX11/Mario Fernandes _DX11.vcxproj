@@ -245,8 +245,10 @@
     <ClInclude Include="camera.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="CarPhysics.h" />
+    <ClInclude Include="Colliders.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MathMario.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="objfilemodel.h" />
     <ClInclude Include="ParticleGenerator.h" />

@@ -1,5 +1,11 @@
 #include "CarPhysics.h"
 
+/// <summary>
+/// Initialize car
+/// </summary>
+/// <param name="time"></param>
+/// <param name="accelerationforce"></param>
+/// <param name="brakingForce"></param>
 CarPhysics::CarPhysics(Timer* time, float accelerationforce, float brakingForce)
 {
 	m_time = time;
@@ -11,6 +17,9 @@ CarPhysics::~CarPhysics()
 {
 }
 
+/// <summary>
+/// Update current velocity, drag and position
+/// </summary>
 void CarPhysics::Update()
 {
 	m_CurrentVelocity +=  m_acceleration * m_time->GetDeltaTime();

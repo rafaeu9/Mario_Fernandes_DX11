@@ -6,6 +6,8 @@ struct SKYBOX_CONSTANT_BUFFER
 
 };// TOTAL SIZE = 64 bytes
 
+/// <param name="D3DDevice"></param>
+/// <param name="ImmediateContext"></param>
 skyBox::skyBox(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext)
 {
 	m_pD3DDevice = D3DDevice;
@@ -26,6 +28,8 @@ skyBox::~skyBox()
 	if (m_pDepthWriteSkybox != 0) m_pDepthWriteSkybox->Release();
 }
 
+/// <param name="view"></param>
+/// <param name="projection"></param>
 void skyBox::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
 	//Set vertex buffer
@@ -63,6 +67,9 @@ void skyBox::Draw(XMMATRIX* view, XMMATRIX* projection)
 	m_pImmediateContext->OMSetDepthStencilState(m_pDepthWriteSolid,0);
 }
 
+/// <param name="x"></param>
+/// <param name="y"></param>
+/// <param name="z"></param>
 void skyBox::Follow(float x, float y, float z)
 {
 	m_x = x;

@@ -1,5 +1,9 @@
 #include "Input.h"
 
+
+/// <param name="hWnd"></param>
+/// <param name="hInst"></param>
+/// <returns></returns>
 HRESULT Input::Initialise(HWND* hWnd, HINSTANCE* hInst)
 {
 	m_hWnd = hWnd;
@@ -44,6 +48,8 @@ void Input::Update()
 
 }
 
+/// <param name="DI_keycode"></param>
+/// <returns></returns>
 bool Input::IsKeyPressed(unsigned char DI_keycode)
 {
 	return m_keyboard_keys_state[DI_keycode] & 0x80;

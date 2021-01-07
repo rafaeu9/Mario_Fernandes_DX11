@@ -1,0 +1,8 @@
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\model_shaders.cso
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\Particle_shaders.cso
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\reflect_shader.cso
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\shaders.cso
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\SkyBox.cso
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\text2D_shaders.cso
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\track_shader.cso
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Release\Mario Fernandes _DX11.exe

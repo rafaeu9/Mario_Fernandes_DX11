@@ -15,6 +15,10 @@ public:
 
 	void Draw(XMMATRIX* view, XMMATRIX* projection);
 
+#pragma region Modify modle
+
+
+
 	void SetXPos(float num) { m_x = num; };
 	void SetYPos(float num) { m_y = num; };
 	void SetZPos(float num) { m_z = num; };
@@ -45,6 +49,8 @@ public:
 	void ModZRot(float num) { m_zAngle += num; };
 	
 	void ModScale(float num) { m_scale += num; };
+
+#pragma endregion
 
 	void LookAt_XZ(float x, float y);
 	void MovedFoward(float distance);

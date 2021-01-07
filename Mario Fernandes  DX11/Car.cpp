@@ -1,5 +1,14 @@
 #include "Car.h"
 
+/// <summary>
+/// Initialise car
+/// </summary>
+/// <param name="camera"></param>
+/// <param name="model"></param>
+/// <param name="time"></param>
+/// <param name="input"></param>
+/// <param name="particle"></param>
+/// <param name="Bparticle"></param>
 Car::Car(camera* camera, Model* model, Timer* time, Input* input, ParticleGenerator* particle, ParticleGenerator* Bparticle)
 {
 	m_camera = camera;
@@ -53,6 +62,11 @@ void Car::Update()
 	m_model->SetPos(m_Physics->GetPosition());
 }
 
+/// <summary>
+/// Draw car
+/// </summary>
+/// <param name="view"></param>
+/// <param name="projection"></param>
 void Car::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
 	
@@ -61,8 +75,10 @@ void Car::Draw(XMMATRIX* view, XMMATRIX* projection)
 
 	camerapos.y = m_CameraHight;
 
+	//Update camera position
 	m_camera->SetPosition(camerapos.x, camerapos.y, camerapos.z);
 	
+	//Update camera rotation
 	if(m_LookCar)
 	m_camera->LookAt_XYZ(m_Physics->GetPosition().x,m_Physics->GetPosition().y + m_OffSetY, m_Physics->GetPosition().z);
 	else
@@ -76,6 +92,7 @@ void Car::Draw(XMMATRIX* view, XMMATRIX* projection)
 
 	m_particle->Draw(view, projection, XMFLOAT3(m_camera->GetX(), m_camera->GetY(), m_camera->GetZ()));
 
+	//Draw boost particles
 	if (boosting)
 	{
 		m_Bparticle->Draw(view, projection, XMFLOAT3(m_camera->GetX(), m_camera->GetY(), m_camera->GetZ()));

@@ -15,6 +15,8 @@ public:
 
 	void Draw(XMMATRIX* view, XMMATRIX* projection);
 
+#pragma region Modify Model
+
 	void SetXPos(float num) { m_x = num; };
 	void SetYPos(float num) { m_y = num; };
 	void SetZPos(float num) { m_z = num; };
@@ -55,8 +57,11 @@ public:
 
 	void ModScale(float num) { m_scale += num; };
 
+#pragma endregion
+
 	void LookAt_XZ(float x, float y);
 	void MovedFoward(float distance);
+
 
 	XMVECTOR GetBoundingSphereWorldSpacePosition();
 	float GetBoundingSphereRadius() { return m_bounding_sphere_radius * m_scale; };
@@ -66,10 +71,10 @@ public:
 	
 	ObjFileModel* m_pObject;
 
-	float			m_bounding_sphere_centre_x = 0,
-		m_bounding_sphere_centre_y = 0,
-		m_bounding_sphere_centre_z = 0,
-		m_bounding_sphere_radius = 0;
+	float		m_bounding_sphere_centre_x = 0,
+				m_bounding_sphere_centre_y = 0,
+				m_bounding_sphere_centre_z = 0,
+				m_bounding_sphere_radius = 0;
 
 private:
 

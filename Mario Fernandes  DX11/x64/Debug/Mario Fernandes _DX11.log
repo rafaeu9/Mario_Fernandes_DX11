@@ -1,0 +1,159 @@
+﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
+C:\Users\M�rio\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\model_shaders.hlsl(28,29-65): warning X3206: 'dot': implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\model_shaders.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\Particle_shaders.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+C:\Users\M�rio\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflect_shader.hlsl(27,12-49): warning X3206: implicit truncation of vector type
+C:\Users\M�rio\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflect_shader.hlsl(29,23-50): warning X3206: 'mul': implicit truncation of vector type
+C:\Users\M�rio\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflect_shader.hlsl(29,12-50): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\reflect_shader.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+C:\Users\M�rio\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\shaders.hlsl(25,29-65): warning X3206: 'dot': implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\shaders.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\SkyBox.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\text2D_shaders.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+C:\Users\M�rio\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\track_shader.hlsl(28,29-65): warning X3206: 'dot': implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\track_shader.cso
+  camera.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\camera.cpp(12,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\camera.cpp(13,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\camera.cpp(20,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\camera.cpp(21,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Car.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  CarPhysics.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\CarPhysics.cpp(46,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\CarPhysics.cpp(47,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  game.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(162,89): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(212,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(214,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(220,46): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(233,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(239,48): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(242,70): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(243,65): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(160,23): warning C4101: 'world': unreferenced local variable
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(316,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(319,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\game.cpp(322,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Input.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  KeyCode.cpp
+  main.cpp
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\main.cpp(196,19): warning C4552: '!=': result of expression not used
+  Model.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(72,27): warning C4101: 'ms': unreferenced local variable
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(135,29): warning C4101: 'DirLightRotate': unreferenced local variable
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(176,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(182,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(183,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(191,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(219,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(225,150): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  objfilemodel.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\objfilemodel.cpp(224,28): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+  ParticleGenerator.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\ParticleGenerator.cpp(13,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\ParticleGenerator.cpp(29,32): warning C4305: '=': truncation from '__int64' to 'float'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\ParticleGenerator.cpp(351,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\ParticleGenerator.cpp(357,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\ParticleGenerator.cpp(358,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  reflectiveModel.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(67,27): warning C4101: 'ms': unreferenced local variable
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(157,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(163,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(164,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(172,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(200,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(206,150): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(209,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  skyBox.cpp
+  text2D.cpp
+  timer.cpp
+  TrackModel.cpp
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(70,23): warning C4083: expected 'constant'; found identifier 'disable'
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(318,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(351,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(387,37): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(391,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,30): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\MathMario.h(392,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(74,27): warning C4101: 'ms': unreferenced local variable
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(178,37): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(184,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(185,51): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(193,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(221,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(227,150): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(230,33): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(264,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(268,22): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\TrackModel.cpp(116): warning C4715: 'TrackModel::LoadObjModel': not all control paths return a value
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\reflectiveModel.cpp(109): warning C4715: 'reflectiveModel::LoadObjModel': not all control paths return a value
+C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\Model.cpp(114): warning C4715: 'Model::LoadObjModel': not all control paths return a value
+  Mario Fernandes _DX11.vcxproj -> C:\Users\Mário\Documents\GitHub\Mario_Fernandes_DX11\Mario Fernandes  DX11\x64\Debug\Mario Fernandes _DX11.exe

@@ -10,6 +10,8 @@ struct REFLECTIVE_MODEL_CONSTANT_BUFFER
 	XMVECTOR ambient_light_colour;			//16 bytes
 };// TOTAL SIZE = 64 bytes
 
+/// <param name="D3DDevice"></param>
+/// <param name="ImmediateContext"></param>
 reflectiveModel::reflectiveModel(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext)
 {
 	m_pD3DDevice = D3DDevice;
@@ -33,6 +35,8 @@ reflectiveModel::~reflectiveModel()
 	if (m_pSampler) m_pSampler->Release();
 }
 
+/// <param name="filename"></param>
+/// <returns></returns>
 HRESULT reflectiveModel::LoadObjModel(char* filename)
 {
 	m_pObject = new ObjFileModel(filename, m_pD3DDevice, m_pImmediateContext);
@@ -108,6 +112,8 @@ HRESULT reflectiveModel::LoadObjModel(char* filename)
 	CalculateBoundingSphereRadius();
 }
 
+/// <param name="filename"></param>
+/// <returns></returns>
 HRESULT reflectiveModel::AddTexture(char* filename)
 {
 	HRESULT hr = S_OK;
@@ -120,7 +126,8 @@ HRESULT reflectiveModel::AddTexture(char* filename)
 		return hr;
 }
 
-
+/// <param name="view"></param>
+/// <param name="projection"></param>
 void reflectiveModel::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
 	
@@ -225,6 +232,8 @@ XMVECTOR reflectiveModel::GetBoundingSphereWorldSpacePosition()
 	return offset;
 }
 
+/// <param name="model"></param>
+/// <returns></returns>
 bool reflectiveModel::CheckCollision(Model* model)
 {
 	//if (model == this) return false;

@@ -9,6 +9,8 @@ struct MODEL_CONSTANT_BUFFER
 	XMVECTOR ambient_light_colour;			//16 bytes
 };// TOTAL SIZE = 64 bytes
 
+/// <param name="D3DDevice"></param>
+/// <param name="ImmediateContext"></param>
 Model::Model(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext)
 {
 	m_pD3DDevice = D3DDevice;
@@ -38,6 +40,8 @@ Model::~Model()
 	if (rastStateCullBack) rastStateCullBack->Release();
 }
 
+/// <param name="filename"></param>
+/// <returns></returns>
 HRESULT Model::LoadObjModel(char* filename)
 {
 	m_pObject = new ObjFileModel(filename, m_pD3DDevice, m_pImmediateContext);
@@ -113,6 +117,8 @@ HRESULT Model::LoadObjModel(char* filename)
 	CalculateBoundingSphereRadius();
 }
 
+/// <param name="filename"></param>
+/// <returns></returns>
 HRESULT Model::AddTexture(char* filename)
 {
 	HRESULT hr = S_OK;
@@ -125,7 +131,8 @@ HRESULT Model::AddTexture(char* filename)
 		return hr;
 }
 
-
+/// <param name="view"></param>
+/// <param name="projection"></param>
 void Model::Draw(XMMATRIX* view, XMMATRIX* projection)
 {
 	m_directional_light_shines_from = XMVectorSet(5.0f, 5.0f, 5.0f, 0.0f);
@@ -170,6 +177,8 @@ void Model::Draw(XMMATRIX* view, XMMATRIX* projection)
 
 }
 
+/// <param name="x"></param>
+/// <param name="z"></param>
 void Model::LookAt_XZ(float x, float z)
 {
 
@@ -183,6 +192,10 @@ void Model::MovedFoward(float distance)
 	m_z += cos(m_yAngle * (XM_PI / 180.0)) * distance;
 }
 
+/// <summary>
+/// get Collider position
+/// </summary>
+/// <returns></returns>
 void Model::CalculateModelCentrePoint()
 {
 	float max_x = 0, max_y = 0, max_z = 0;
@@ -212,6 +225,9 @@ void Model::CalculateModelCentrePoint()
 
 }
 
+/// <summary>
+/// Get Collider area of effect
+/// </summary>
 void Model::CalculateBoundingSphereRadius()
 {
 	float distance = 0;
@@ -229,6 +245,7 @@ void Model::CalculateBoundingSphereRadius()
 
 }
 
+
 XMVECTOR Model::GetBoundingSphereWorldSpacePosition()
 {
 	XMMATRIX world;
@@ -245,6 +262,11 @@ XMVECTOR Model::GetBoundingSphereWorldSpacePosition()
 	return offset;
 }
 
+/// <summary>
+/// Check the collision in a shpere area
+/// </summary>
+/// <param name="model"></param>
+/// <returns></returns>
 bool Model::CheckCollision(Model* model)
 {
 	if (model == this) return false;
@@ -264,6 +286,11 @@ bool Model::CheckCollision(Model* model)
 		return false;
 }
 
+/// <summary>
+/// Check the collision in a XY 2D circle
+/// </summary>
+/// <param name="model"></param>
+/// <returns></returns>
 bool Model::CheckCollisionXY(Model* model)
 {
 	if (model == this) return false;

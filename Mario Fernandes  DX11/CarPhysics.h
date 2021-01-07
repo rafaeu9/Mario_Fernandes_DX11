@@ -13,10 +13,14 @@ public:
 
 	void Update();
 
+#pragma region Control Car
+
 	void Accelerate();
 	void Boost(float extraSpeed);
 	void Brake();
 	void Rotate(float roationDegrees);
+
+#pragma endregion
 
 	Vector3 GetPosition() { return m_position; };
 	Vector3 GetDirection() { return m_direction; };
@@ -29,6 +33,8 @@ public:
 
 private:
 
+#pragma region Basic values
+
 	Vector3 m_direction = { 0, 0, 1 };
 	Vector3 m_position = { 0, 0, 0 };
 	Vector3 m_acceleration = { 0, 0, 0 };
@@ -36,7 +42,8 @@ private:
 	Vector3 m_externalForce = { 0.9f,0,0.9f };
 
 	float m_accelerationforce = 0, m_brakingForce = 0, m_rotation = -90;
-	
+
+#pragma endregion
 
 	Timer* m_time;
 };

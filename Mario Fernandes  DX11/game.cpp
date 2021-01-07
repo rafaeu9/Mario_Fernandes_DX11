@@ -1,5 +1,12 @@
 #include "game.h"
 
+/// <summary>
+/// Inicialise Modles and ther textures, the car, camera and sky box
+/// </summary>
+/// <param name="D3DDevice"></param>
+/// <param name="ImmediateContext"></param>
+/// <param name="Input"></param>
+/// <returns></returns>
 HRESULT Game::Initialise(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext, Input* Input)
 {
 	m_input = Input;
@@ -308,6 +315,9 @@ void Game::ReadInputStates()
 #pragma endregion
 }
 
+/// <summary>
+/// Finish screen
+/// </summary>
 void Game::Finish()
 {
 	m_input->Update();

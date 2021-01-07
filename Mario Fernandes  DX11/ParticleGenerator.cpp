@@ -7,6 +7,8 @@ struct PARTICLE_CONSTANT_BUFFER
 	XMFLOAT4	Color; //64 bytes
 };// TOTAL SIZE = 64 bytes
 
+/// <param name="D3DDevice"></param>
+/// <param name="ImmediateContext"></param>
 ParticleGenerator::ParticleGenerator(ID3D11Device* D3DDevice, ID3D11DeviceContext* ImmediateContext)
 {
 
@@ -51,6 +53,11 @@ ParticleGenerator::~ParticleGenerator()
 	if (m_pSampler) m_pSampler->Release();
 }
 
+/// <summary>
+/// Select you particle effect
+/// </summary>
+/// <param name="inp_type"></param>
+/// <returns></returns>
 HRESULT ParticleGenerator::CreateParticle(ParticleType inp_type)
 {	
 	type = inp_type;
@@ -116,6 +123,8 @@ HRESULT ParticleGenerator::CreateParticle(ParticleType inp_type)
 	return hr;
 }
 
+/// <param name="filename"></param>
+/// <returns></returns>
 HRESULT ParticleGenerator::AddTexture(char* filename)
 {
 	HRESULT hr = S_OK;
@@ -128,7 +137,9 @@ HRESULT ParticleGenerator::AddTexture(char* filename)
 		return hr;
 }
 
-
+/// <param name="view"></param>
+/// <param name="projection"></param>
+/// <param name="cameraposition"></param>
 void ParticleGenerator::Draw(XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 cameraposition)
 {
 	//local vars
@@ -319,6 +330,10 @@ void ParticleGenerator::Draw(XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 came
 	DrawOne(&test, view, projection, cameraposition);
 }
 
+/// <param name="one"></param>
+/// <param name="view"></param>
+/// <param name="projection"></param>
+/// <param name="cameraposition"></param>
 void ParticleGenerator::DrawOne(Particle* one, XMMATRIX* view, XMMATRIX* projection, XMFLOAT3 cameraposition)
 {
 	UINT stride = sizeof(XMFLOAT3);
@@ -474,6 +489,9 @@ XMVECTOR ParticleGenerator::GetBoundingSphereWorldSpacePosition()
 	return offset;
 }
 
+
+/// <param name="model"></param>
+/// <returns></returns>
 bool ParticleGenerator::CheckCollision(ParticleGenerator* model)
 {
 	if (model == this) return false;

@@ -1,5 +1,12 @@
 #include "camera.h"
 
+/// <summary>
+/// Initialize camera
+/// </summary>
+/// <param name="x"></param>
+/// <param name="y"></param>
+/// <param name="z"></param>
+/// <param name="rotation"></param>
 camera::camera(float x, float y, float z, float rotation)
 {
 	m_x = x;
@@ -13,6 +20,10 @@ camera::camera(float x, float y, float z, float rotation)
 	m_dz = cos(m_camera_rotation * (XM_PI / 180.0));	
 }
 
+/// <summary>
+/// Rotate camera
+/// </summary>
+/// <param name="roationDegrees"></param>
 void camera::Rotate(float roationDegrees)
 {
 	m_camera_rotation += roationDegrees;
@@ -53,6 +64,10 @@ XMMATRIX camera::GetViewMatrix()
 	return XMMatrixLookAtLH(m_position, m_lookat, m_up);
 }
 
+
+/// <param name="x"></param>
+/// <param name="y"></param>
+/// <param name="z"></param>
 void camera::SetPosition(float x, float y, float z)
 {
 	m_x = x;
@@ -60,11 +75,16 @@ void camera::SetPosition(float x, float y, float z)
 	m_z = z;
 }
 
+/// <param name="x"></param>
+/// <param name="z"></param>
 void camera::LookAt_XZ(float x, float z)
 {
 	m_lookat = XMVectorSet(x, m_y, z, 0.0);
 }
 
+/// <param name="x"></param>
+/// <param name="y"></param>
+/// <param name="z"></param>
 void camera::LookAt_XYZ(float x, float y, float z)
 {
 	m_lookat = XMVectorSet(x, y, z, 0.0);
